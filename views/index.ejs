@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8">
+       <title>Chat App (WebSocket)</title>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+       <link href="/style.css" rel="stylesheet" type="text/css" />
+       <link href="https://fonts.googleapis.com/css?family=Caveat|Marck+Script" rel="stylesheet">
+
+   </head>
+   <body>
+        <h2>Welcome To My<span style="color:black">ChatRoom</span></h2>
+       <div id="mario-chat">  
+           <button id="clear">Clear</button>  
+           <div id="chat-window">
+               <div id="output">
+                <% messages.map(msg => { %>
+                    <p><strong><%= msg.name %>: </strong><%= msg.message %></p>
+                  <% }); %>
+               </div>
+               <div id="feedback"></div>
+           </div>
+           
+           <input id="handle" type="text" placeholder="Username"/>
+           <input id="message" type="text" placeholder="Message"/>
+           <button id="send">Send</button>
+       </div>
+
+       <script src="/chat.js"></script>
+
+   </body>
+</html>
